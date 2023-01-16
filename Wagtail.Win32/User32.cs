@@ -47,6 +47,14 @@ public static class User32
 
 
     /// <summary></summary>
+    [DllImport(L, EntryPoint = "SendMessage", SetLastError = true, ExactSpelling = false, CharSet = CharSet.Unicode)]
+    public static extern IntPtr SendMessage(
+            [In]IntPtr hWnd,
+            [In]uint msg,
+            [In, Out]IntPtr wParam,
+            [In, Out]IntPtr lParam);
+
+    /// <summary></summary>
     public static int GetWindowTextLength(IntPtr hWnd) => IsWindowUnicode(hWnd)
         ? GetWindowTextLengthW(hWnd)
         : GetWindowTextLengthA(hWnd);

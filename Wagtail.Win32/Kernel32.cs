@@ -16,6 +16,13 @@ public static class Kernel32
     public static extern int GetLastError();
 
     /// <summary></summary>
+    [DllImport(L, EntryPoint = "OpenProcess", SetLastError = true, ExactSpelling = false, CharSet = CharSet.Auto)]
+    public static extern IntPtr OpenProcess(
+            [In]int dwDesiredAccess,
+            [In]bool bInheritHandle,
+            [In]int dwProcessId);
+
+    /// <summary></summary>
     [DllImport(L, EntryPoint = "GetCurrentProcess", SetLastError = true, ExactSpelling = false, CharSet = CharSet.Auto)]
     public static extern IntPtr GetCurrentProcess();
 
