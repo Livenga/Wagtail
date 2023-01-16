@@ -38,6 +38,5 @@ internal class Program
         Console.WriteLine($"{result} {Kernel32.GetLastError()}");
 
         Kernel32.CloseHandle(hToken);
-
     }
 }
