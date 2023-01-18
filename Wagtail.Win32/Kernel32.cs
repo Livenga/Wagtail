@@ -3,6 +3,7 @@ namespace Wagtail.Win32;
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using Wagtail.Win32.Enums;
 
 
 /// <summary></summary>
@@ -18,7 +19,7 @@ public static class Kernel32
     /// <summary></summary>
     [DllImport(L, EntryPoint = "OpenProcess", SetLastError = true, ExactSpelling = false, CharSet = CharSet.Auto)]
     public static extern IntPtr OpenProcess(
-            [In]int dwDesiredAccess,
+            [In]OpenProcessDesiredAccess dwDesiredAccess,
             [In]bool bInheritHandle,
             [In]int dwProcessId);
 
